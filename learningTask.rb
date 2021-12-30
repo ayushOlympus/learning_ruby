@@ -3,16 +3,16 @@ def flattenArrayWithInBuiltMethod(arr)
 end
 
 def frequencyOfChars(string)
-    freq=Hash.new
+    freq=Hash.new(0)
     charsArray=string.split('')
-    for i in charsArray
-        if freq.has_key?(i)
-            freq[i] +=1
-        else
-            freq[i] = 1
-        end
-    end
+    charsArray.each { |char| freq[char] +=1 }
     freq
+end
+
+class Array
+    def double
+        map {|x| x*2}
+    end
 end
 
 
@@ -21,3 +21,6 @@ flattenedArray = flattenArrayWithInBuiltMethod(a)
 freq = frequencyOfChars("frequencychecker")
 puts flattenedArray
 puts freq
+a=[1,2,3]
+puts a.double()
+
